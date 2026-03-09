@@ -25,7 +25,7 @@ async fn main() -> Result<(), async_nats::Error> {
     let mut input = String::new();
     let mut buf = String::new();
 
-    'repl: loop {
+    loop {
         print!("\n[pub | exit] > ");
         io::stdout().flush().unwrap();
         input.clear();
@@ -41,7 +41,7 @@ async fn main() -> Result<(), async_nats::Error> {
 
                 if !subjects.contains(&subject) {
                     eprintln!("unknown subject, available: {}", subjects.join(", "));
-                    continue 'repl;
+                    continue;
                 }
 
                 print!("message > ");
