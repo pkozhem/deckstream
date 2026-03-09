@@ -17,7 +17,7 @@ Inspired by FastStream.
     ```bash
     cargo run --bin worker
     ```
-5) Publish a message to a subject via the `api.rs` process.
+5) Publish a message to a subject via the `api` process.
 
 ---
 
