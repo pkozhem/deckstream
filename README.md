@@ -1,23 +1,30 @@
 ### Deckstream
 
-Inspired by faststream.
+Inspired by FastStream.
+
 #### Usage
-1) Setup .env file.
-2) Run api.
-```bash
-cargo run --bin api
-```
-3) Run worker.
-```bash
-cargo run --bin worker
-```
-4) Publish some message to a subject in "api.rs" process
+
+1) Start Docker Compose:
+    ```bash
+    docker compose up -d
+    ```
+2) Set up the `.env` file (from `.env.example`).
+3) Run the API:
+    ```bash
+    cargo run --bin api
+    ```
+4) Run the worker:
+    ```bash
+    cargo run --bin worker
+    ```
+5) Publish a message to a subject via the `api.rs` process.
 
 ---
 
-#### PS
-The "api.rs" in this project is the most simple way to get input data - instead you can use anything you want: WEB API, desktop app, CLI etc.
+#### Note
 
-In docker compose file you can find NUI - graphical interface to interact and watch for nats streams, subjects, messages etc. You can find NUI by follow 127.0.0.1:NUI_PORT (from .env).
+`api.rs` in this project is the simplest way to feed input data — you can replace it with anything you want: a web API, desktop app, CLI, etc.
+
+In the Docker Compose file you can find NUI — a graphical interface for interacting with and monitoring NATS streams, subjects, messages, etc. Access NUI at `127.0.0.1:NUI_PORT` (see `.env`).
 
 This project is in progress.
